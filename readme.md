@@ -28,21 +28,17 @@ Diffusion Language Models (DLMs) have attracted significant attention for their 
 
 ## Method
 
-### Overview of CSL
-
-![Alt text](imgs/intro.png)
-
 ### Causal Shortcut Extraction
 
 ![Alt text](imgs/extraction.png)
 
-### Entropy Reduction During Extraction
-
-![Alt text](imgs/entropy_polyline.png)
-
 ### Reasoning via Causal Shortcuts
 
 ![Alt text](imgs/shortcut_results.png)
+
+### Entropy Reduction During Extraction
+
+![Alt text](imgs/entropy_polyline.png)
 
 ---
 
