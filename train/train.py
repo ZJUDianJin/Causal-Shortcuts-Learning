@@ -279,7 +279,10 @@ def causalshortcut_forward_process(batch, causal_input_mask, prompt_lengths, mas
 
     noisy_batch = torch.where(is_mask, mask_id, batch)
 
-    p_mask = prob
+    answer_length_per_sample = l - prompt_lengths  # [B]
+    masked_num = is_mask.sum(dim=1).float()       # [B]
+    p_mask_ratio = masked_num / answer_length_per_sample.clamp(min=1)  # [B]
+    p_mask = p_mask_ratio.unsqueeze(1).repeat(1, l)
 
     return noisy_batch, is_mask, p_mask
 
